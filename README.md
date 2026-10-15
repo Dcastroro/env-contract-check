@@ -1,5 +1,7 @@
 # Env Contract Check
 
+[![CI](https://github.com/Dcastroro/env-contract-check/actions/workflows/ci.yml/badge.svg)](https://github.com/Dcastroro/env-contract-check/actions/workflows/ci.yml)
+
 **Catch missing environment variables before your app starts.**
 
 A local command-line tool that checks an environment file against a committed
@@ -12,9 +14,11 @@ Node.js 22+ · no dependencies · no network requests · no API keys.
 
 ## Try it in a minute
 
-From a checkout of this project:
+Clone the project and run the included fictional example:
 
 ```sh
+git clone https://github.com/Dcastroro/env-contract-check.git
+cd env-contract-check
 npm ci --ignore-scripts
 npm run demo
 ```
