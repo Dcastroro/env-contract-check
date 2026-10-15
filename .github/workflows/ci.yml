@@ -1,13 +1,14 @@
 name: CI
-
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
-
 permissions:
   contents: read
-
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check:
     strategy:
@@ -16,6 +17,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         node: [22, 24]
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -25,5 +27,6 @@ jobs:
           node-version: ${{ matrix.node }}
           package-manager-cache: false
       - run: npm ci --ignore-scripts
+      - run: npm run repo:check
       - run: npm run check
       - run: npm run demo

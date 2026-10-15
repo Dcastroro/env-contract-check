@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
 import { open } from 'node:fs/promises';
 import { TextDecoder } from 'node:util';
 import { checkEnv } from '../src/check.mjs';
 
-const VERSION = '0.1.0';
+const VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;
 const MAX_BYTES = 1024 * 1024;
 const HELP = `Env Contract Check ${VERSION}
 

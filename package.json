@@ -1,21 +1,39 @@
 {
   "name": "env-contract-check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validate local environment files against .env.example without logging values.",
   "type": "module",
   "private": true,
   "license": "MIT",
   "author": "David Castro",
-  "repository": { "type": "git", "url": "git+https://github.com/Dcastroro/env-contract-check.git" },
-  "bugs": { "url": "https://github.com/Dcastroro/env-contract-check/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dcastroro/env-contract-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dcastroro/env-contract-check/issues"
+  },
   "homepage": "https://github.com/Dcastroro/env-contract-check#readme",
-  "engines": { "node": ">=22" },
-  "bin": { "env-contract-check": "bin/env-contract-check.mjs" },
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "env-contract-check": "bin/env-contract-check.mjs"
+  },
   "exports": "./src/check.mjs",
   "scripts": {
     "test": "node --test",
     "check": "node --check bin/env-contract-check.mjs && node --check src/check.mjs && node --test",
-    "demo": "node bin/env-contract-check.mjs --example examples/.env.example --env examples/.env.valid --strict"
+    "demo": "node bin/env-contract-check.mjs --example examples/.env.example --env examples/.env.valid --strict",
+    "repo:check": "node scripts/repository-check.mjs",
+    "release:build": "node scripts/build-release.mjs"
   },
-  "keywords": ["dotenv", "environment", "validation", "cli", "automation", "ci"]
+  "keywords": [
+    "dotenv",
+    "environment",
+    "validation",
+    "cli",
+    "automation",
+    "ci"
+  ]
 }

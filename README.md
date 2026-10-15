@@ -198,3 +198,9 @@ Possible follow-ups are explicit type annotations, a JSON Schema for reports,
 and reusable CI packaging, each with compatibility tests.
 
 MIT license. Created by David Castro.
+
+## Repository and release checks
+
+Run `npm run repo:check` before committing. Source releases are built from a
+clean, tested tag and include a checksum and commit manifest. See
+[RELEASING.md](RELEASING.md) for validation, publication and maintenance.

@@ -6,3 +6,4 @@ coverage/
 !examples/.env.valid
 !examples/.env.invalid
 *.log
+.release/

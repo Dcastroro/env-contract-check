@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
@@ -79,7 +80,7 @@ test('help and version work without any configuration files', t => {
   assert.match(exec(cwd, ['--help']).stdout, /Usage:/);
   const result = exec(cwd, ['--version']);
   assert.equal(result.status, 0);
-  assert.equal(result.stdout.trim(), '0.1.0');
+  assert.equal(result.stdout.trim(), JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version);
 });
 
 test('human and JSON errors do not disclose configuration values', t => {
