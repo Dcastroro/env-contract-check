@@ -172,6 +172,15 @@ verification is recorded in [VALIDATION.md](VALIDATION.md).
 
 ## Development
 
+### Run the check as a pipeline prerequisite
+
+[Task Relay](https://github.com/Dcastroro/task-relay) can run this checker before
+tests or builds and skip dependent work when validation fails. Both tools run
+locally from source without runtime dependencies.
+See the [integration configuration](https://github.com/Dcastroro/task-relay/blob/main/docs/integrations.md#use-env-contract-check-as-a-prerequisite).
+
+### Check this project
+
 ```sh
 npm ci --ignore-scripts
 npm run check
