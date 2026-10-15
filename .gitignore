@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+.env
+.env.*
+!.env.example
+!examples/.env.valid
+!examples/.env.invalid
+*.log
